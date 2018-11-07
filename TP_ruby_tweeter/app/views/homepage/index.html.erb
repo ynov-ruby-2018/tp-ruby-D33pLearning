@@ -1,0 +1,32 @@
+<!-- # <%= "Hello #{current_user.email}" %>
+#
+#
+# <%= form_tag root_path, method: :post do %>
+# <%= text_area_tag 'Poster un tweet', nil %>
+# <%= submit_tag "Save" %>
+# <% end %> -->
+
+<div class="main">
+  <%= form_tag homepage_index_path, method: :post do %>
+    <p>Welcome to Tweetos!<p/>
+    <%= text_area_tag 'comment', nil %>
+    <br/>
+    <%= submit_tag "Tweeter!" %>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+  <% end %>
+
+  <table summary="tableau des tweets">
+  <caption>Derniers Tweetos</caption>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= "#{current_user.email}" %> </td>
+        <td><%= comment.content %> </td>
+        <td><%= submit_tag "Like" %> </td>
+        <td><%= submit_tag "Unlike" %> </td>
+      <tr/>
+      <% end %>
+      </table
+</div>
